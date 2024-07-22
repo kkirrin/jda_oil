@@ -44,10 +44,10 @@
 
                 <div class="flex md:flex-row flex-col gap-[20px] pt-[40px]">
                     <div class="md:w-2/3 w-auto">
-                        <img src="./src/img/main/Rectangle 22.png" alt="" class="">
+                        <img src="<?php echo get_template_directory_uri() . '/src/img/main/Rectangle 22.png'; ?>" alt="" class="">
                     </div>
                     <div class="md:1/3 w-auto h-auto">
-                        <img src="./src/img/main/Frame 245.png" alt="" class="h-max">
+                        <img src="<?php echo get_template_directory_uri() . '/src/img/main/Frame 245.png'; ?>" alt="" class="h-max">
                     </div>
                 </div>
             </div>  

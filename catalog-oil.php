@@ -190,7 +190,7 @@
                 <h2 class="md:text-[45px] text-[30px] text-dark-green"> Рекомендованная продукция</h2> 
                 <ul class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 pt-[30px]">
                     <li class="flex flex-col border border-dark-green gap-[10px]">
-                        <img class="max-w-[200px] m-auto" src="./src/img/main/card.png" alt="">
+                        <img class="max-w-[200px] m-auto" src="<?php echo get_template_directory_uri() . '/src/img/main/card.png'; ?>" alt="">
                         <div class="border-t border-dark-green p-[10px]">
                             <p class="font-semibold text-dark-green mb-[10px]">IDEMITSU ZEPRO ECO MEDALIST 0W-20 SN, ILSAC GF-5</p>
                             

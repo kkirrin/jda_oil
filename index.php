@@ -7,9 +7,6 @@
 
 <?php get_header(); ?>
 
-
-
-
     <main>
         <h1 class="visually-hidden">Скрытый заголовок</h1>
 
@@ -18,28 +15,37 @@
                 <div class="main-item relative">
                     <div class="swiper-pagination"></div>
                     
-                    <div class="swiper-wrapper h-[85vh]">
-                        <div class="swiper-slide relative bg-black -z-10 md:h-[86vh] h-auto" style="background-image: url('./src/img/main/banner.png'); background-repeat: no-repeat; background-size: cover;">
-                            <div class="container text-5xl md:text-9xl md:pt-[196px] pt-[176px] relative z-10">
-                                <h2 class="text-start text-white z-10 font-medium md:text-[150px] text-[50px] uppercase">
-                                    Технические жидкости
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="swiper-slide relative bg-black -z-10 md:h-[86vh] h-auto" style="background-image: url('./src/img/main/banner.png'); background-repeat: no-repeat; background-size: cover;">
-                            <div class="container text-5xl md:text-9xl md:pt-[196px] pt-[176px] relative z-10">
-                                <h2 class="text-start text-white z-10 font-medium md:text-[150px] text-[50px] uppercase">
-                                    Технические жидкости
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="swiper-slide relative bg-black -z-10 md:h-[86vh] h-auto" style="background-image: url('./src/img/main/banner.png'); background-repeat: no-repeat; background-size: cover;">
-                            <div class="container text-5xl md:text-9xl md:pt-[196px] pt-[176px] relative z-10">
-                                <h2 class="text-start text-white z-10 font-medium md:text-[150px] text-[50px] uppercase">
-                                    Технические жидкости
-                                </h2>
-                            </div>
-                        </div>
+                    <div class="swiper-wrapper">
+                        <?php
+                            $my_posts = get_posts(array(
+                                'numberposts' => 25,
+                                'order' => 'title',
+                                'orderby' => 'rand',
+                                'post_type' => 'slide',
+                            ));
+
+                            if(!empty($my_posts)) {
+                                foreach($my_posts as $post) :
+                                    $photos = get_field('photo_banner');
+                                    $banner_name = get_field('name_banner'); 
+
+                                    if(!empty($photos)) {
+                                        foreach($photos as $key => $photo) { 
+                                            foreach($banner_name as $name)
+                                            echo '
+                                                <div class="swiper-slide relative bg-black -z-10  h-screen" style="background-image: url('. $photo["url"] .'); background-repeat: no-repeat; background-size: cover;">
+                                                    <div class="container text-5xl md:text-9xl md:pt-[196px] pt-[176px] relative z-10">
+                                                        <h2 class="text-start text-white z-10 font-medium md:text-[150px] text-[50px] uppercase">
+                                                            ' . $name["name_banner"] . '
+                                                        </h2>
+                                                    </div>
+                                                </div>';
+                                        }
+                                    }
+                                endforeach;
+                            };
+                        ?>
+                      
                         
                     </div>
                 </div>
@@ -92,7 +98,7 @@
                         <h3>Моторное масло</h3>
                     </div>
                     <div>
-                        <a href="" class="border border-dark-green p-[10px] flex items-center gap-[16px]">
+                        <a href="/?page_id=52" class="border border-dark-green p-[10px] flex items-center gap-[16px]">
                             <span class="text-dark-green">Смотреть все</span>
                             <svg width="38" height="13" viewBox="0 0 38 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M37.0303 7.03033C37.3232 6.73744 37.3232 6.26256 37.0303 5.96967L32.2574 1.1967C31.9645 0.903806 31.4896 0.903806 31.1967 1.1967C30.9038 1.48959 30.9038 1.96447 31.1967 2.25736L35.4393 6.5L31.1967 10.7426C30.9038 11.0355 30.9038 11.5104 31.1967 11.8033C31.4896 12.0962 31.9645 12.0962 32.2574 11.8033L37.0303 7.03033ZM0.5 7.25H36.5V5.75H0.5V7.25Z" fill="#0D2B00"/>
@@ -103,144 +109,61 @@
                 </div>
 
                 <div class="oil__list">
-                    <div class="oil__list-item">
-                        <img class="item-img" src="./src/img/main/oir__card-img.jpg" alt="">
-                        <div class="item-content">
-                            <p class="item-title">Гидравлическое масло JDA</p>
-                            <div class="item-list">
-                                <ul class="list--first">
-                                    <li>Код товара</li>
-                                    <li>Состав</li>
-                                    <li>Объём</li>
-                                </ul>
-                                <ul class="list--second">
-                                    <li>345678900 </li>
-                                    <li>Минеральное </li>
-                                    <li>20 л</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="oil__list-item--price">0 000 000 Р</p>
-                        <div class="oil__list-item--buttons">
-                            <button>В розницу</button>
-                            <button>Оптом</button>
-                        </div>
-                    </div>
-                    <div class="oil__list-item">
-                        <img class="item-img" src="./src/img/main/oir__card-img.jpg" alt="">
-                        <div class="item-content">
-                            <p class="item-title">Гидравлическое масло JDA</p>
-                            <div class="item-list">
-                                <ul class="list--first">
-                                    <li>Код товара</li>
-                                    <li>Состав</li>
-                                    <li>Объём</li>
-                                </ul>
-                                <ul class="list--second">
-                                    <li>345678900 </li>
-                                    <li>Минеральное </li>
-                                    <li>20 л</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="oil__list-item--price">0 000 000 Р</p>
-                        <div class="oil__list-item--buttons">
-                            <button>В розницу</button>
-                            <button>Оптом</button>
-                        </div>
-                    </div>
-                    <div class="oil__list-item">
-                        <img class="item-img" src="./src/img/main/oir__card-img.jpg" alt="">
-                        <div class="item-content">
-                            <p class="item-title">Гидравлическое масло JDA</p>
-                            <div class="item-list">
-                                <ul class="list--first">
-                                    <li>Код товара</li>
-                                    <li>Состав</li>
-                                    <li>Объём</li>
-                                </ul>
-                                <ul class="list--second">
-                                    <li>345678900 </li>
-                                    <li>Минеральное </li>
-                                    <li>20 л</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="oil__list-item--price">0 000 000 Р</p>
-                        <div class="oil__list-item--buttons">
-                            <button>В розницу</button>
-                            <button>Оптом</button>
-                        </div>
-                    </div>
-                    <div class="oil__list-item">
-                        <img class="item-img" src="./src/img/main/oir__card-img.jpg" alt="">
-                        <div class="item-content">
-                            <p class="item-title">Гидравлическое масло JDA</p>
-                            <div class="item-list">
-                                <ul class="list--first">
-                                    <li>Код товара</li>
-                                    <li>Состав</li>
-                                    <li>Объём</li>
-                                </ul>
-                                <ul class="list--second">
-                                    <li>345678900 </li>
-                                    <li>Минеральное </li>
-                                    <li>20 л</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="oil__list-item--price">0 000 000 Р</p>
-                        <div class="oil__list-item--buttons">
-                            <button>В розницу</button>
-                            <button>Оптом</button>
-                        </div>
-                    </div>
-                    <div class="oil__list-item">
-                        <img class="item-img" src="./src/img/main/oir__card-img.jpg" alt="">
-                        <div class="item-content">
-                            <p class="item-title">Гидравлическое масло JDA</p>
-                            <div class="item-list">
-                                <ul class="list--first">
-                                    <li>Код товара</li>
-                                    <li>Состав</li>
-                                    <li>Объём</li>
-                                </ul>
-                                <ul class="list--second">
-                                    <li>345678900 </li>
-                                    <li>Минеральное </li>
-                                    <li>20 л</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="oil__list-item--price">0 000 000 Р</p>
-                        <div class="oil__list-item--buttons">
-                            <button>В розницу</button>
-                            <button>Оптом</button>
-                        </div>
-                    </div>
-                    <div class="oil__list-item">
-                        <img class="item-img" src="./src/img/main/oir__card-img.jpg" alt="">
-                        <div class="item-content">
-                            <p class="item-title">Гидравлическое масло JDA</p>
-                            <div class="item-list">
-                                <ul class="list--first">
-                                    <li>Код товара</li>
-                                    <li>Состав</li>
-                                    <li>Объём</li>
-                                </ul>
-                                <ul class="list--second">
-                                    <li>345678900 </li>
-                                    <li>Минеральное </li>
-                                    <li>20 л</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="oil__list-item--price">0 000 000 Р</p>
-                        <div class="oil__list-item--buttons">
-                            <button>В розницу</button>
-                            <button>Оптом</button>
-                        </div>
-                    </div>
+
+                    <?php                         
+                        $args = array(
+                            'post_type' => 'product'
+                        );
+
+                        $query = new WP_Query($args);
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                $terms = get_the_terms($post->ID, 'product_cat');
+
+                                $product = wc_get_product(get_the_ID());
+                                $product_name = $product->get_name();
+                                $product_sku = $product->get_sku();
+                                $product_image = wp_get_attachment_url($product->get_image_id());
+                                $product_price = $product->get_price_html();
+                                $product_link = $product->get_permalink();
+
+                                $product_class = $product->get_attribute('pa_class'); 
+                                $product_compound = $product->get_attribute('pa_compound');
+                                $product_viscosity = $product->get_attribute('pa_viscosity');
+                                $product_volume = $product->get_attribute('pa_volume');
+
+                                echo '<a href="'. $product_link .'">';
+                                echo '  <div class="oil__list-item">';
+                                echo '      <img class="item-img" src="'. $product_image .'" alt="">';
+                                echo '          <div class="item-content">';
+                                echo '              <p class="item-title">'. $product_name .'</p>';
+                                echo '              <div class="item-list">';
+                                echo '                  <ul class="list--first">';
+                                echo '                      <li>Класс</li>';
+                                echo '                      <li>Состав</li>';
+                                echo '                      <li>Объём</li>';
+                                echo '                  </ul>';
+                                echo '                  <ul class="list--second">';
+                                echo '                      <li>'. $product_class .'</li>';
+                                echo '                      <li>'. $product_compound .'</li>';
+                                echo '                      <li>'. $product_volume .'</li>';
+                                echo '                  </ul>';
+                                echo '              </div>';
+                                echo '              <p class="oil__list-item--price">'. $product_price .'</p>';
+                                echo '              <div class="oil__list-item--buttons">';
+                                echo '                  <button style="width: -webkit-fill-available;" class="p-[10px] text-dark-green bg-white text-center">В розницу</button>';
+                                echo '                  <button style="width: -webkit-fill-available;" class="p-[10px] text-white text-center bg-green">Оптом</button>';
+                                echo '              </div>';
+                                echo '          </div>';
+                                echo '      </div>';
+                                echo '  </a>';
+
+
+                            }
+                        }
+                        wp_reset_postdata(); // Reset the post data
+                    ?>
                 </div>
             </div>
         </section>
@@ -251,7 +174,7 @@
                 <h3 class="md:pt-[100px] pt-[80px]">О производителе</h3>
                 <div class="flex gap-[20px] md:flex-row flex-col mt-[40px]">
                     <div class="md:w-1/2 w-full border border-dark-green px-[70px] flex justify-center">
-                        <img class="md:h-[400px] h-auto" src="./src/img/main/about.png" alt="">
+                        <img class="md:h-[400px] h-auto" src="<?php echo get_template_directory_uri() . '/src/img/main/about.png'; ?>" alt="">
                     </div>
                     <div class="md:w-1/2 w-full border border-dark-green md:p-[70px] p-[30px]">
                         <p class="text-[16px] text-dark-green pb-[10px]">
@@ -264,13 +187,25 @@
                 </div>
 
                 <div class="md:my-[120px] my-[80px] relative border border-dark-green">
-                    <img class="md:block hidden absolute left-0 top-0" src="./src/img/icons/about_bg.png" alt="">
-                    <img class="md:block hidden absolute right-0" src="./src/img/icons/about_bg_right.png" alt="">
+                    <img class="md:block hidden absolute left-0 top-0" src="<?php echo get_template_directory_uri() . '/src/img/icons/about_bg.png'; ?>" alt="">
+                    <img class="md:block hidden absolute right-0" src="<?php echo get_template_directory_uri() . '/src/img/icons/about_bg_right.png'; ?>" alt="">
                     <div class="md:pt-[106px] md:pb-[76px] md:px-[80px] p-[20px] pt-[10px] pb-[10px]">
-                        <p class="md:mb-[40px] mb-[20px] z-10 text-dark-green md:text-[89px] sm:text-[60px] text-[37px] border border-dark-green p-[10px] md:w-max w-auto">Летняя акция:</p>
-                        <p class="text-dark-green z-10 md:text-[40px] sm:text-[30px] text-[25px] ">скидка 10% на заказы <br> конкретной категории</p>
+
+                    <?php
+                        $my_posts = get_posts(array(
+                            'post_type' => 'promotion',
+                        ));      
+                        if (!empty($my_posts)) {
+                            foreach ($my_posts as $post) {
+                                echo '
+                                    <p class="md:mb-[40px] mb-[20px] z-10 text-dark-green md:text-[89px] sm:text-[60px] text-[37px] border border-dark-green p-[10px] md:w-max w-auto">' . get_field('name_promo', $post->ID) . ':</p>
+                                    <p class="text-dark-green z-10 md:text-[65px] sm:text-[30px] text-[25px] md:max-w-[700px] w-auto">' . get_field('text_promotion', $post->ID) . '</p>
+                                ';
+                            }
+                        }
+                    ?>
                     </div>
-                    <img style="width: -webkit-fill-available;" class="md:hidden block" src="./src/img/main/about_s.png" alt="">
+                    <img style="width: -webkit-fill-available;" class="md:hidden block" src="<?php echo get_template_directory_uri() . '/src/img/main/about_s.png'; ?>" alt="">
                 </div>
                 
             </div>
@@ -284,7 +219,7 @@
                         <h3>Новости</h3>
                     </div>
                     <div>
-                        <a href="" class="border border-dark-green p-[10px] flex items-center gap-[16px]">
+                        <a href="/?page_id=17" class="border border-dark-green p-[10px] flex items-center gap-[16px]">
                             <span class="text-dark-green">Смотреть все</span>
                             <svg width="38" height="13" viewBox="0 0 38 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M37.0303 7.03033C37.3232 6.73744 37.3232 6.26256 37.0303 5.96967L32.2574 1.1967C31.9645 0.903806 31.4896 0.903806 31.1967 1.1967C30.9038 1.48959 30.9038 1.96447 31.1967 2.25736L35.4393 6.5L31.1967 10.7426C30.9038 11.0355 30.9038 11.5104 31.1967 11.8033C31.4896 12.0962 31.9645 12.0962 32.2574 11.8033L37.0303 7.03033ZM0.5 7.25H36.5V5.75H0.5V7.25Z" fill="#0D2B00"/>
@@ -295,41 +230,26 @@
                 </div>
 
                 <div class="news-list">
-                    <div class="news-list--item">
-                        <img src="./src/img/icons/Rectangle 11.png" alt="" class="news-list--item__img">
-                        <date class="news-list--item__date">15.02</date>
-                        <article class="news-list--item__name">Масло для водной техники</article>
-                    </div>
-                    <div class="news-list--item">
-                        <img src="./src/img/icons/Rectangle 11.png" alt="" class="news-list--item__img">
-                        <date class="news-list--item__date">15.02</date>
-                        <article class="news-list--item__name">Масло для водной техники</article>
-                    </div>
-                    <div class="news-list--item">
-                        <img src="./src/img/icons/Rectangle 11.png" alt="" class="news-list--item__img">
-                        <date class="news-list--item__date">15.02</date>
-                        <article class="news-list--item__name">Масло для водной техники</article>
-                    </div>
-                    <div class="news-list--item">
-                        <img src="./src/img/icons/Rectangle 11.png" alt="" class="news-list--item__img">
-                        <date class="news-list--item__date">15.02</date>
-                        <article class="news-list--item__name">Масло для водной техники</article>
-                    </div>
-                    <div class="news-list--item">
-                        <img src="./src/img/icons/Rectangle 11.png" alt="" class="news-list--item__img">
-                        <date class="news-list--item__date">15.02</date>
-                        <article class="news-list--item__name">Масло для водной техники</article>
-                    </div>
-                    <div class="news-list--item">
-                        <img src="./src/img/icons/Rectangle 11.png" alt="" class="news-list--item__img">
-                        <date class="news-list--item__date">15.02</date>
-                        <article class="news-list--item__name">Масло для водной техники</article>
-                    </div>
-                    <div class="news-list--item">
-                        <img src="./src/img/icons/Rectangle 11.png" alt="" class="news-list--item__img">
-                        <date class="news-list--item__date">15.02</date>
-                        <article class="news-list--item__name">Масло для водной техники</article>
-                    </div>
+                    <?php
+                        $my_posts = get_posts(array(
+                            'numberposts' => 25,
+                            'order' => 'title',
+                            'orderby' => 'rand',
+                            'post_type' => 'news',
+                        ));
+                        
+                        foreach($my_posts as $post) {
+                            echo '
+                                <a href="'. get_permalink($post->ID) .'">
+                                    <div class="news-list--item">
+                                        <img src="'. get_field('photo_news') .'" alt="" class="news-list--item__img">
+                                        <date class="news-list--item__date">'. get_field('date_news') .'</date>
+                                        <article class="news-list--item__name">'. get_field('name_news') .'</article>
+                                    </div>
+                                </a>';
+                            };
+                    ?>
+                    
                 </div>
             </div>
         </section>

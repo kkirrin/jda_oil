@@ -1,6 +1,7 @@
 <?php 
     /*
-    Template Name: карточка масла
+    Template name: card__oil__item
+    Template Post Type: oil
     */
 ?>
 
@@ -45,7 +46,7 @@
 
                     <div class="pt-[40px] md:pb-[60px] pb-[0px] flex md:flex-row flex-col gap-[40px]">
                         <div class="overflow-hidden border-dark-green border md:w-[600px] w-auto h-auto">
-                            <img class="m-auto p-[10px]" src="./src/img/main/card.png" alt="">
+                            <img class="m-auto p-[10px]" src="<?php echo get_template_directory_uri() . '/src/img/main/card.png'; ?>" alt="">
                         </div>
 
                         <ul class="single-list">
@@ -71,76 +72,7 @@
                   <div>
                     <ul class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-[20px]">
                         <li class="flex flex-col border border-dark-green gap-[10px]">
-                            <img class="max-w-[200px] m-auto" src="./src/img/main/card.png" alt="">
-                            <div class="border-t border-dark-green p-[10px]">
-                                <p class="font-semibold text-dark-green mb-[10px]">Гидравлическое масло JDA</p>
-                                <div class="flex justify-between">
-                                    <ul class="flex flex-col gap-[10px]">
-                                        <li>Код товара</li>
-                                        <li>Состав</li>
-                                        <li>Объём</li>
-                                    </ul>
-                                    <ul class="flex flex-col gap-[10px]">
-                                        <li class="font-semibold text-dark-green">44444444</li>
-                                        <li class="font-semibold text-dark-green">Минеральное</li>
-                                        <li class="font-semibold text-dark-green">20л</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p class="text-dark-green md:text-[20px] text-[16px] text-end border-t p-[5px]">Цена</p>
-                            <div class="flex" style="width: -webkit-fill-available;">
-                                <button style="width: -webkit-fill-available;" class="p-[10px] border-t text-dark-green bg-white text-center">В розницу</button>
-                                <button style="width: -webkit-fill-available;" class="p-[10px] text-white text-center bg-green">Оптом</button>
-                            </div>
-                        </li>
-                        <li class="flex flex-col border border-dark-green gap-[10px]">
-                            <img class="max-w-[200px] m-auto" src="./src/img/main/card.png" alt="">
-                            <div class="border-t border-dark-green p-[10px]">
-                                <p class="font-semibold text-dark-green mb-[10px]">Гидравлическое масло JDA</p>
-                                <div class="flex justify-between">
-                                    <ul class="flex flex-col gap-[10px]">
-                                        <li>Код товара</li>
-                                        <li>Состав</li>
-                                        <li>Объём</li>
-                                    </ul>
-                                    <ul class="flex flex-col gap-[10px]">
-                                        <li class="font-semibold text-dark-green">44444444</li>
-                                        <li class="font-semibold text-dark-green">Минеральное</li>
-                                        <li class="font-semibold text-dark-green">20л</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p class="text-dark-green md:text-[20px] text-[16px] text-end border-t p-[5px]">Цена</p>
-                            <div class="flex" style="width: -webkit-fill-available;">
-                                <button style="width: -webkit-fill-available;" class="p-[10px] border-t text-dark-green bg-white text-center">В розницу</button>
-                                <button style="width: -webkit-fill-available;" class="p-[10px] text-white text-center bg-green">Оптом</button>
-                            </div>
-                        </li>
-                        <li class="flex flex-col border border-dark-green gap-[10px]">
-                            <img class="max-w-[200px] m-auto" src="./src/img/main/card.png" alt="">
-                            <div class="border-t border-dark-green p-[10px]">
-                                <p class="font-semibold text-dark-green mb-[10px]">Гидравлическое масло JDA</p>
-                                <div class="flex justify-between">
-                                    <ul class="flex flex-col gap-[10px]">
-                                        <li>Код товара</li>
-                                        <li>Состав</li>
-                                        <li>Объём</li>
-                                    </ul>
-                                    <ul class="flex flex-col gap-[10px]">
-                                        <li class="font-semibold text-dark-green">44444444</li>
-                                        <li class="font-semibold text-dark-green">Минеральное</li>
-                                        <li class="font-semibold text-dark-green">20л</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p class="text-dark-green md:text-[20px] text-[16px] text-end border-t p-[5px]">Цена</p>
-                            <div class="flex" style="width: -webkit-fill-available;">
-                                <button style="width: -webkit-fill-available;" class="p-[10px] border-t text-dark-green bg-white text-center">В розницу</button>
-                                <button style="width: -webkit-fill-available;" class="p-[10px] text-white text-center bg-green">Оптом</button>
-                            </div>
-                        </li>
-                        <li class="flex flex-col border border-dark-green gap-[10px]">
-                            <img class="max-w-[200px] m-auto" src="./src/img/main/card.png" alt="">
+                            <img class="max-w-[200px] m-auto" src="<?php echo get_template_directory_uri() . '/src/img/main/card.png'; ?>" alt="">
                             <div class="border-t border-dark-green p-[10px]">
                                 <p class="font-semibold text-dark-green mb-[10px]">Гидравлическое масло JDA</p>
                                 <div class="flex justify-between">

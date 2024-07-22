@@ -1,6 +1,7 @@
 <?php 
     /*
-    Template Name: карточка новостей
+    Template name: card__news__item
+    Template Post Type: news
     */
 ?>
 

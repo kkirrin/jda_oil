@@ -79,7 +79,7 @@
                         <ul class="flex flex-col gap-[20px]">
                             <li class="flex md:flex-row flex-col gap-[20px] justify-between border-b border-dark-green pb-[30px]">
                                 <div class="border border-dark-green p-[20px]">
-                                    <img src="./src/img/main/image 1.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri() . '/src/img/main/image 1.png'; ?>" alt="">
                                 </div>
                                 <div class="flex justify-between flex-col">
                                     <p class="text-dark-green md:text-[20px] text-[16px] font-semibold">Гидравлическое масло JDA</p>
@@ -117,7 +117,7 @@
                                     <button class="h-max w-[172px] p-[10px] text-center border border-dark-green bg-white text-dark-green">В розницу</button>
                                     <button class="h-max w-[172px] p-[10px] text-center bg-green text-white">Оптом</button>
                                 </div>
-                            </li>
+                            </li> 
                         </ul>
                     </div>
                 </div>

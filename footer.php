@@ -2,7 +2,7 @@
             <div class="container flex md:justify-between md:items-center items-start justify-start text-white md:flex-row flex-col md:gap-0 gap-[30px]">
                 <div class="flex flex-row gap-[30px] flex-wrap items-center">
                     <a href="/">
-                        <img class="m-auto w-[130px] h-[60px] object-fill" src="./src/img/logo.jpg" alt="Logo">
+                        <img class="m-auto w-[130px] h-[60px] object-fill" src="<?php echo get_template_directory_uri() . '/src/img/logo.jpg'; ?>" alt="Logo">
                     </a>
                     <div>
                         <ul class="flex flex-col">
@@ -20,10 +20,10 @@
                 <div class="flex md:flex-col md:gap-[0px] flex-row gap-[30px]">
                    
                         <ul class="md:gap-[10px] gap-[0px] grid md:grid-cols-2 grid-cols-1">
-                            <li><a href="" class="text-dark-green md:text-[16px] text-[12px]">Каталог</a></li>
-                            <li><a href="" class="text-dark-green md:text-[16px] text-[12px]">О компании</a></li>
-                            <li><a href="" class="text-dark-green md:text-[16px] text-[12px]">Новости</a></li>
-                            <li><a href="" class="text-dark-green md:text-[16px] text-[12px]">Контакты</a></li>
+                            <li><a href="/?page_id=58" class="text-dark-green md:text-[16px] text-[12px]">Каталог</a></li>
+                            <li><a href="/?page_id=13" class="text-dark-green md:text-[16px] text-[12px]">О компании</a></li>
+                            <li><a href="/?page_id=17" class="text-dark-green md:text-[16px] text-[12px]">Новости</a></li>
+                            <li><a href="/?page_id=15" class="text-dark-green md:text-[16px] text-[12px]">Контакты</a></li>
                         </ul>
 
                         <div class="md:hidden block">
@@ -250,9 +250,9 @@
                 </div>    
             </div>
         </div>
-    <div class="scroll-top">
-        <img src="./src/img/icons/arrow.svg" alt="стрелка вверх">
-    </div>
+
+
+    <script type="module" src="<?php echo get_template_directory_uri() . '/js/main.js'; ?>"></script>
 </body>
 
 </html>
